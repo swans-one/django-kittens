@@ -1,0 +1,27 @@
+{% extends "kittens/base.html" %}
+
+{% block title %}Click a Kitten!{% endblock %}
+
+{% block content%}
+<h1 class="title">Click a Kitten!</h1>
+<div class="box">
+  <img src="{{ kitten.thumbnail }}">
+  <div class="new-kitten">
+    <a href="{% url 'random-kitten' %}">
+      <div class="button">New Kitten</div>
+    </a>
+  </div>
+  <div class="votes">
+    <a href="{% url 'kitten-up' id=kitten.id %}">
+      <div class="button float">
+        👍: {{ kitten.votes_up }}
+      </div>
+    </a>
+    <a href="{% url 'kitten-down' id=kitten.id %}">
+      <div class="button float">
+        👎: {{ kitten.votes_down }}
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}

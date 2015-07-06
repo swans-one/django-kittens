@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'kittens/kitten.css' %}"/>
+  </head>
+  <body>
+    {% block header %}
+    <div id="header">
+      <a href="{{ kittens_home }}">home</a>
+      <a href="{% url 'random-kitten' %}">random</a>
+      <a href="{% url 'top-kittens' %}">top</a>
+    </div>
+    {% endblock %}
+    {% block content%}
+    {% endblock %}
+  </body>
+</html>
