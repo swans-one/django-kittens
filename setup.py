@@ -34,10 +34,12 @@ setup(
     license='MIT',
     install_requires=[
         'django>=1.8',
+        'praw',
     ],
     tests_require=[
         'django-nose',
         'mock>=1.0.1',
+        'django-dynamic-fixture',
     ],
     setup_requires=[
         'nose>=1.0',
