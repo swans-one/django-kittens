@@ -2,20 +2,20 @@ from django_dynamic_fixture import G
 from django.test import TestCase
 from mock import patch, MagicMock
 
-from ..models import Kitten, reddit_kitten
+from django_kittens.models import Kitten, reddit_kitten
 
 
 class GetRandomTest(TestCase):
-    @patch('packaging_july2015.apps.kittens.models.random.random')
-    @patch('packaging_july2015.apps.kittens.models.KittenManager._rand_inst')
+    @patch('django_kittens.models.random.random')
+    @patch('django_kittens.models.KittenManager._rand_inst')
     def test_calls_rand_inst(self, rand_inst_mock, random_mock):
         G(Kitten)
         random_mock.return_value = .00001
         Kitten.objects.get_random()
         self.assertTrue(rand_inst_mock.called)
         
-    @patch('packaging_july2015.apps.kittens.models.random.random')
-    @patch('packaging_july2015.apps.kittens.models.KittenManager.create_new')
+    @patch('django_kittens.models.random.random')
+    @patch('django_kittens.models.KittenManager.create_new')
     def test_calls_create_new(self, create_new_mock, random_mock):
         G(Kitten)
         random_mock.return_value = .9
@@ -37,7 +37,7 @@ class CreateNewTest(TestCase):
         self.kit.thumbnail = 'cute.jpg'
         self.kit.title = 'My cute cat'
 
-    @patch('packaging_july2015.apps.kittens.models.reddit_kitten')
+    @patch('django_kittens.models.reddit_kitten')
     def test_saves_instance(self, reddit_kitten_mock):
         reddit_kitten_mock.return_value = self.kit
         Kitten.objects.create_new()
@@ -45,7 +45,7 @@ class CreateNewTest(TestCase):
         expected = 1
         self.assertEqual(kitten_count, expected)
 
-    @patch('packaging_july2015.apps.kittens.models.reddit_kitten')
+    @patch('django_kittens.models.reddit_kitten')
     def test_returns_instance(self, reddit_kitten_mock):
         reddit_kitten_mock.return_value = self.kit
         kit = Kitten.objects.create_new()

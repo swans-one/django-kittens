@@ -1,1 +1,1 @@
-default_app_config = 'packaging_july2015.apps.kittens.apps.KittensConfig'
+default_app_config = 'django_kittens.apps.KittensConfig'
