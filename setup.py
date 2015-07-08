@@ -32,6 +32,9 @@ setup(
         'Framework :: Django :: 1.8',
     ],
     license='MIT',
+    package_data={
+        'django_kittens': ['django_kittens/templates/django_kittens/*.html']
+    },
     install_requires=[
         'django>=1.8',
         'praw',
