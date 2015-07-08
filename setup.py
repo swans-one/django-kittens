@@ -33,7 +33,7 @@ setup(
     ],
     license='MIT',
     package_data={
-        'django_kittens': ['django_kittens/templates/django_kittens/*.html']
+        'django_kittens': ['templates/kittens/*.html']
     },
     install_requires=[
         'django>=1.8',
