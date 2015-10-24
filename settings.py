@@ -10,7 +10,7 @@ def configure_settings():
     if not settings.configured:
         db_config = {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'django_kittens',
+            'NAME': 'django_kittens_db.sqlite3',
         }
 
         settings.configure(
@@ -28,6 +28,6 @@ def configure_settings():
                 'django_kittens.tests',
             ),
             ROOT_URLCONF='django_kittens.urls',
-            DEBUG=False,
+            DEBUG=True,
             MIDDLEWARE_CLASSES=(),
         )
