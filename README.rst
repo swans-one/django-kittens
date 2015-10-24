@@ -9,6 +9,8 @@ This project was created to demonstrate how to package a django app
 for distribution. It accompanies the presentation given at this
 `Code & Supply: Django PGH Meetup`_.
 
+This project has also been used to demonstrate usage of git and github at a Code & Supply StarterSeries event.
+
 .. _`Code & Supply: Django PGH Meetup`: http://www.meetup.com/Pittsburgh-Code-Supply/events/223471063/
 
 .. _`/r/aww/`: http://www.reddit.com/r/aww
