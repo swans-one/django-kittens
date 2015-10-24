@@ -38,6 +38,8 @@ class KittenManager(models.Manager):
 
 
 class Kitten(models.Model):
+    """Store urls to pictures of cute kittens, keep track of votes
+    """
     url = models.CharField(max_length=200, unique=True)
     thumbnail = models.CharField(max_length=200)
     title = models.CharField(max_length=200, unique=True)
